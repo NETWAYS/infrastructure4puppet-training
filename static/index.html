@@ -1,0 +1,4168 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Infrastructure for Puppet</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+
+  <link rel="stylesheet" href=".//css/reset.css" type="text/css"/>
+
+  
+  <link rel="icon" href="image/global/favicon.ico"/>
+  
+
+  <link type="text/css" href=".//css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href=".//css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href=".//css/sh_style.css" rel="stylesheet" />
+  <link type="text/css" href=".//css/tipsy.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href=".//css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src=".//js/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src=".//js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src=".//js/jquery-print.js"></script>
+  <script type="text/javascript" src=".//js/jquery.batchImageLoad.js"></script>
+  <script type="text/javascript" src=".//js/jquery.parsequery.min.js"></script>
+  <script type="text/javascript" src=".//js/jquery.doubletap-0.1.js"></script>
+  <script type="text/javascript" src=".//js/jquery.tipsy.js"></script>
+
+  <script type="text/javascript" src=".//js/fg.menu.js"></script>
+  <script type="text/javascript" src=".//js/showoff.js"></script>
+  <script type="text/javascript" src=".//js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src=".//js/sh_main.min.js"></script>
+  <script type="text/javascript" src=".//js/core.js"></script>
+  <script type="text/javascript" src=".//js/showoffcore.js"></script>
+  <script type="text/javascript" src=".//js/coffee-script.js"></script>
+
+  
+    
+      <script type="text/javascript" src=".//js/sh_lang/sh_sh.min.js"></script>
+    
+      <script type="text/javascript" src=".//js/sh_lang/sh_puppet.min.js"></script>
+    
+      <script type="text/javascript" src=".//js/sh_lang/sh_code.min.js"></script>
+    
+  
+
+  
+    
+    <link rel="stylesheet" href=".//file/netways.css" type="text/css"/>
+  
+
+  
+
+  <script type="text/javascript">
+    $(function(){
+      setupPreso(false, './');
+    });
+
+    editUrl  = "";
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+<a tabindex="1" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="stylemenu"><span class="ui-icon ui-icon-triangle-1-s"></span>styles</a>
+<div id="stylepicker" class="hidden"></div>
+
+
+<div id="help">
+  <table>
+    <tr><td class="key">z, ?</td><td>toggle help (this)</td></tr>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">shift-space, &larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">b</td><td>blank screen</td></tr>
+    <tr><td class="key">d</td><td>toggle debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c, t</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">g</td><td>toggle follow</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">n</td><td>toggle notes</td></tr>
+    <tr><td class="key">p</td><td>run preshow</td></tr>
+    <tr><td class="key">P</td><td>toggle pause</td></tr>
+    <tr><td class="key">s</td><td>choose style</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso"><center>loading presentation...</center></div>
+<div id="footer">
+  <span id="followMode"></span>
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+  <span id="slideFilename"></span>
+  <img id="disconnected" src=".//css/disconnected.png" />
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div id="global_Pre_Title_01_Title" class="slide noprint" data-transition="none">
+<div class="content noprint" ref="global/Pre/Title/01_Title/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<div class="title-name"><p>Infrastructure for Puppet</p></div>
+
+<div class="title-location"><p>created by NETWAYS GmbH</p></div>
+
+<div class="title-author"><p>Original Author: Lennart Betz, Thomas Widhalm</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="training_01_training" class="slide subsection" data-transition="none">
+<div class="content subsection" ref="training/01_training/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>1 Introduction</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="training_01_training" class="slide " data-transition="none">
+<div class="content " ref="training/01_training/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Training</h1>
+
+<p>The material is based on Puppet 4 and Foreman 1.12 or higher.</p>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="training_02_overview" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="training/02_overview">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Course Overview</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="training_03_hints" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="training/03_hints">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Training Hints</h1>
+
+<ul>
+<li>Ask questions! Dumb questions do not exist.</li>
+<li>Add your own notes! Having learnt something is reflected best with your own additions.</li>
+<li>Join the conversation! Many of these exercises require real world scenarios and your feedback and questions.</li>
+<li>Work together! Be part of the training team and find solutions together.</li>
+</ul>
+
+<p>Additional documentation in your browser at:</p>
+
+<ul>
+<li><a href="https://docs.puppet.com/puppet/">https://docs.puppet.com/puppet/</a></li>
+<li><a href="http://theforman.org">http://theforman.org</a></li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="architecture_01_architecture" class="slide subsection" data-transition="none">
+<div class="content subsection" ref="architecture/01_architecture/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>2 Architecture</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="architecture_01_architecture" class="slide " data-transition="none">
+<div class="content " ref="architecture/01_architecture/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Components</h1>
+
+<p>Puppet Master:
+Compiles configuration catalogs and serves as a certificate authority.</p>
+
+<p>Puppet Agent:
+Periodically requests and enforces configuration from the Master.</p>
+
+<p>Foreman:
+Provides a web-based graphical user interface and classification API endpoints.</p>
+
+<p>PuppetDB:
+Stores all data generated by the Puppet infrastructure.</p>
+
+<p>MCollective:
+Listens on every node for orchestration commands and invokes actions in response.</p>
+
+<div class="handouts">
+
+<p>Supporting services:</p>
+
+<ul>
+<li>ActiveMQ
+
+<ul>
+<li>Brokers MCollective messages between all nodes.</li>
+</ul>
+</li>
+<li>PostgreSQL
+
+<ul>
+<li>Database backend for PuppetDB and the  Foreman.</li>
+<li>PuppetDB can also be configured to use an external database.</li>
+</ul>
+</li>
+<li>Apache
+
+<ul>
+<li>Serves via passenger the Foreman GUI.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="architecture_02_small" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="architecture/02_small/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Monolithic Installation</h1>
+
+<p></p>
+<center><img src="./file/architecture/../_images/architecture/monolithic_small.png" width="1043" height="365" style="width:950px;height:375px;" alt="Monolithic Architecture"></center>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>All communications, unless otherwise specified, are SSL encrypted.</p>
+
+<p>Even when starting small, it's smart to plan for expansion by configuring dns_alt_names. This is a list of aliases which the master's SSL certificate will also validate for. This is useful when you want to place a pool of many Puppet masters behind a load balancer and share a single DNS name.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="architecture_02_small" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="architecture/02_small/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Standalone Master</h1>
+
+<ul>
+<li>
+<p>Puppet Master (Port 8140):</p>
+
+<ul>
+<li>Catalog and CA requests from agents.</li>
+</ul>
+</li>
+<li>
+<p>Foreman (Port 443):</p>
+
+<ul>
+<li>Serves the Console user interface.</li>
+</ul>
+</li>
+<li>
+<p>MCollective (Port 61613):</p>
+
+<ul>
+<li>MCollective orchestration messages.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="architecture_03_medium" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="architecture/03_medium/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Monolithic Installation with Compile Masters</h1>
+
+<p></p>
+<center><img src="./file/architecture/../_images/architecture/monolithic_compile.png" width="1050" height="520" style="width:950px;height:493px;" alt="Monolithic Architecture with Compile Masters"></center>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>All communications, unless otherwise specified, are SSL encrypted. In this diagram, the Master of Masters is the same configuration as the standalone master and holds the authoritative Puppet codebase.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="architecture_03_medium" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="architecture/03_medium/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Compile Master</h1>
+
+<ul>
+<li>Puppet Master (Port 8140):
+
+<ul>
+<li>Catalog requests from agents.</li>
+</ul>
+</li>
+<li>PuppetDB (Port 8081):
+
+<ul>
+<li>Every compile master stores facts, catalog etc. into it.</li>
+</ul>
+</li>
+</ul>
+
+<p>Load-balanced compile masters must share a common DNS name, configured with Puppet's setting.</p>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>The Master of Masters serves as the CA node and the authoritative codebase source. Each of the compile masters must sync that codebase and forward CA requests to the CA on the Master of Masters.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="architecture_04_large" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="architecture/04_large/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Large Environment Installation</h1>
+
+<p></p>
+<center><img src="./file/architecture/../_images/architecture/monolithic_large.png" width="1034" height="438" style="width:950px;height:450px;" alt="Large Scale Architecture"></center>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>A load balancer of some sort is required between the agents and the compile masters. In this diagram, the compile masters are the same as described previously. All communications, unless otherwise specified, are SSL encrypted.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="architecture_04_large" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="architecture/04_large/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>CA and Master of Masters Node</h1>
+
+<ul>
+<li>Puppet Master (Port 8140):
+
+<ul>
+<li>Inbound traffic from Puppet agents.</li>
+</ul>
+</li>
+<li>Puppet CA (Port 8140):
+
+<ul>
+<li>Certificate request traffic.</li>
+</ul>
+</li>
+<li>Master and CA (Port 8443):
+
+<ul>
+<li>Forman manages environments on the masters and certificates on the CA.</li>
+</ul>
+</li>
+</ul>
+
+<div class="handouts">
+
+<p>Configuration:</p>
+
+<ul>
+<li>Global Puppet configuration file:
+
+<ul>
+<li><code>/etc/puppetlabs/puppet/puppet.conf</code></li>
+</ul>
+</li>
+<li>Puppet Master
+
+<ul>
+<li><code>/etc/puppetlabs/puppetserver</code></li>
+<li>All files in this directory are combined to generate the configuration.</li>
+</ul>
+</li>
+<li>MCollective Client (sends orchestration commands from an administrative user)
+
+<ul>
+<li><code>~/.mcollective</code></li>
+</ul>
+</li>
+<li>MCollective Server (listens for orchestration commands on all nodes)
+
+<ul>
+<li><code>/etc/puppetlabs/mcollective/*</code></li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="architecture_04_large" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="architecture/04_large/3">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Foreman Node</h1>
+
+<ul>
+<li>Foreman (Port 443):
+
+<ul>
+<li>Serves the user interface.</li>
+<li>External Node Classifier for masters.</li>
+</ul>
+</li>
+</ul>
+
+<div class="handouts">
+
+<p>Configuration:</p>
+
+<ul>
+<li>Foreman
+
+<ul>
+<li><code>/etc/foreman</code></li>
+</ul>
+</li>
+<li>Whitelist to use ENC
+
+<ul>
+<li>Settings in the GUI, section auth</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="architecture_04_large" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="architecture/04_large/4">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>PuppetDB Node</h1>
+
+<ul>
+<li>PuppetDB (Port 8081)
+
+<ul>
+<li>Stores catalog, facts, etc.</li>
+<li>Foreman manages nodes, optional plugin is needed.</li>
+</ul>
+</li>
+<li>PuppetDB (Port 8080)
+
+<ul>
+<li>Unencrypted traffic to display the PuppetDB dashboard.</li>
+</ul>
+</li>
+<li>PostgreSQL (Port 5432)
+
+<ul>
+<li>Backend for PuppetDB</li>
+<li>Foreman database</li>
+</ul>
+</li>
+</ul>
+
+<div class="handouts">
+
+<p>Configuration:</p>
+
+<ul>
+<li>PuppetDB:
+*￼<code>/etc/puppetlabs/puppetdb/conf.d</code>
+
+<ul>
+<li>All files in this directory are combined to generate the configuration.</li>
+</ul>
+</li>
+<li>Certificate Whitelist
+
+<ul>
+<li><code>/etc/puppetlabs/puppetdb/certificate-whitelist</code></li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="architecture_04_large" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="architecture/04_large/5">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>ActiveMQ Hub</h1>
+
+<ul>
+<li>MCollective (Port 61613)
+
+<ul>
+<li>MCollective orchestration messages.</li>
+</ul>
+</li>
+<li>ActiveMQ (Port 61616)
+
+<ul>
+<li>ActiveMQ hub &amp; spoke coordination messages.</li>
+</ul>
+</li>
+</ul>
+
+<div class="handouts">
+
+<p>Configuration:</p>
+
+<ul>
+<li>ActiveMQ
+
+<ul>
+<li><code>/etc/activemq/*</code></li>
+</ul>
+</li>
+<li>MCollective Server (listens for orchestration commands on all nodes)
+
+<ul>
+<li><code>/etc/puppetlabs/mcollect/*</code></li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_01_classroom" class="slide subsection" data-transition="none">
+<div class="content subsection" ref="compile-master/01_classroom/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>3 Compiling Master</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_01_classroom" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="compile-master/01_classroom/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Classroom Environment</h1>
+
+<p>Master of Masters</p>
+
+<p></p>
+<center><img src="./file/compile-master/../_images/compiler/classroom.png" width="1045" height="767" style="width:950px;height:540px;" alt="Monolithic Architecture"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_02_master" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="compile-master/02_master">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>The Master Service</h1>
+
+<p>The puppetserver service runs on the central server.</p>
+
+<ul>
+<li>It is responsible for:
+
+<ul>
+<li>Authenticating agent connections.</li>
+<li>Signing certificates.</li>
+<li>Serving a compiled catalog to the agent.</li>
+<li>Serving files.</li>
+<li>Processing posted reports.</li>
+</ul>
+</li>
+<li>Supports several Linux distributions.</li>
+<li>Runs on the JVM for increased performance at scale.</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_03_exercise-master" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="compile-master/03_exercise-master/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 3.1: Puppet Master Installation</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Install und configure your Puppet Master.</li>
+</ul>
+</li>
+<li>Steps:
+
+<ul>
+<li>Import and start with the trainings VM.</li>
+<li>Add your virtual machine to the classroom infrastructure.</li>
+<li>Do puppet runs against other masters.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_04_tuning" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="compile-master/04_tuning">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Basic Tuning Parameters</h1>
+
+<ul>
+<li>
+<p>Configure JVM for stability in certain environments.</p>
+
+<ul>
+<li>Increase heap size for capacity under heavy load.</li>
+<li>Decrease heap size when running out of system memory.</li>
+</ul>
+</li>
+<li>
+<p>Default heap size of different commponents should be:</p>
+
+<ul>
+<li>Puppet Master: 2 GB</li>
+<li>PuppetDB: 256 MB</li>
+<li>ActiveMQ: 512 MB</li>
+</ul>
+</li>
+</ul>
+
+<p>Settings have to be changed thru Java Options Xms and Xmx, i.e. for the puppetserver:</p>
+
+<pre class="sh_sh"><code>$ vim /etc/sysconfig/puppetserver
+JAVA_ARGS="-Xms2G -Xmx2G -XX:MaxPermSize=256m"</code></pre>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<ul>
+<li>Capacity problems are often indicated with JVM application logs.</li>
+<li>Running out of system memory is often indicated by kernel logs.</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_05_logfiles" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="compile-master/05_logfiles">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Logfiles</h1>
+
+<ul>
+<li>
+<p>Puppet agents logs</p>
+
+<ul>
+<li>Logged to syslog on Unix variants.</li>
+<li>Windows Event log.</li>
+<li>Reports can be viewed in foreman.</li>
+</ul>
+</li>
+<li>
+<p>Services in the Puppet Master stack</p>
+
+<ul>
+<li><code>/var/log/puppetlabs/application/*</code></li>
+<li>example: ￼<code>/var/log/puppetlabs/puppetdb/*</code>
+</li>
+</ul>
+</li>
+<li>
+<p>MCollective client logs</p>
+
+<ul>
+<li>Depends on the user who runs the client.</li>
+<li><code>~/.mcollective.d/client.log</code></li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_06_agent" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="compile-master/06_agent">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>The Agent Service</h1>
+
+<p>The puppet service runs on all managed nodes.</p>
+
+<ul>
+<li>It is responsible for:
+
+<ul>
+<li>Sending information about its current state (facts).</li>
+<li>Requesting configuration state from the Puppet Master.</li>
+<li>Enforcing a retrieved configuration state (catalog).</li>
+</ul>
+</li>
+<li>Agent supported platforms include:
+
+<ul>
+<li>Linux (RHEL, Debian, and several other distributions)</li>
+<li>Windows</li>
+<li>Solaris</li>
+<li>Mac OS X</li>
+<li>AIX</li>
+<li>Network Devices (Arista EOS, Cumulus, ...)</li>
+</ul>
+</li>
+</ul>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>The catalog is an object that represents the desired end-state of a node.</p>
+
+<p>Other points to note:</p>
+
+<ul>
+<li>All communications between the Master and Agent are secured and authenticated via SSL.</li>
+<li>The Agent performs several other ancillary functions:
+
+<ul>
+<li>Synchronizing any Puppet extensions from the Master.</li>
+<li>Retrieving support files as needed from the Master.</li>
+<li> Sending a report back to the Master.</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_07_exercise-agent" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="compile-master/07_exercise-agent/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 3.2: Agent Installation</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Install und configure your Agent VM.</li>
+</ul>
+</li>
+<li>Steps:
+
+<ul>
+<li>Import and Start with a second trainings VM.</li>
+<li>Add your virtual machine to the classroom infrastructure.</li>
+<li>Do a puppet run against your masters.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_08_puppetdb" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="compile-master/08_puppetdb/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>PuppetDB</h1>
+
+<p>PuppetDB stores:</p>
+
+<ul>
+<li>The most recent facts from every node.</li>
+<li>The most recent catalog for every node.</li>
+<li>Necessary for "stored configs" feature, required for exported resources.</li>
+<li>Optionally, 14 days (configurable) of event reports for every node.</li>
+</ul>
+
+<p>Every Compile Master has to send the information to the PuppetDB.</p>
+
+<p>Test if node info are available on a master with:</p>
+
+<pre class="sh_sh"><code>$ puppet node status yourname-agent.localdomain</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_08_puppetdb" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="compile-master/08_puppetdb/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 3.3: PuppetDB Terminus</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Configure on your master the connection to the classroom PuppetDB.</li>
+</ul>
+</li>
+<li>Steps:
+
+<ul>
+<li>Install the plugin binaries.</li>
+<li>Configure the plugin.</li>
+<li>Check the logs after a succesful puppet run.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_09_enc" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="compile-master/09_enc/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>External Node Classifier</h1>
+
+<ul>
+<li>Called by a Puppet Master.</li>
+<li>ENCs can co-exist with standard node definitions in <code>site.pp</code>.</li>
+<li>Examples:
+
+<ul>
+<li>The Foreman</li>
+<li>Puppet Enterprise Console</li>
+</ul>
+</li>
+<li>Connecting an ENC:</li>
+</ul>
+
+<pre>
+[master]
+  node_terminus = exec
+  external_nodes = /usr/local/bin/puppet_node_classifier
+</pre>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_09_enc" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="compile-master/09_enc/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 3.4: Using Foreman's ENC</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Configure on your master the connection to Foreman's ENC.</li>
+</ul>
+</li>
+<li>Steps:
+
+<ul>
+<li>Download, install and configure the node.rb script from the Foreman project.</li>
+<li>Test the script.</li>
+<li>Configure your Puppet Master to use the new ENC script.</li>
+<li>Do a puppet run on your agent machine.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_10_reports" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="compile-master/10_reports/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Processing Reports</h1>
+
+<p>The Puppet Agent can send a report to the Puppet Master after every puppet run</p>
+
+<p></p>
+<center><img src="./file/compile-master/../_images/compiler/agent_report.png" width="669" height="480" style="width:669px;height:480px;" alt="Agent Report"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_10_reports" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="compile-master/10_reports/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>What's in a Report?</h1>
+
+<p>Basic Example:</p>
+
+<pre><code>info: Applying configuration version '1328975856'
+Notice: /Stage[main]/Main/File[/tmp/foo]/mode: 
+   mode changed '0444' to '0644'
+notice: Finished catalog run in 0.03 seconds
+</code></pre>
+
+<ul>
+<li>Metadata about the node, its environment and Puppet version, and the catalog used in the run</li>
+<li>The status of every resource</li>
+<li>Actions that Puppet took during the run, also called events</li>
+<li>Log messages that were generated during the run</li>
+<li>Metrics about the run, such as its duration and how many resources were in a given state</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_10_reports" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="compile-master/10_reports/3">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Configuring Reporting Processor</h1>
+
+<p>On the Puppet Agent:</p>
+
+<pre class="sh_ sh"><code>$ vim /etc/puppetlabs/puppet/puppet.conf
+[agent]
+    report = true</code></pre>
+
+<p>On the Puppet Master:</p>
+
+<pre class="sh_ sh"><code>$ vim /etc/puppetlabs/puppet/puppet.conf
+[master]
+    reports = https,tagmail,store,log
+    reportdir = /var/lib/puppet/reports
+    reporturl = http://localhost:3000/reports/upload</code></pre>
+
+<div class="notes">
+
+<p>There are more report processors available, even third party ones. At the end of this training students will configure a report processor that sends reports to Logstash / Elastic Stack.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_10_reports" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="compile-master/10_reports/4">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Store Report Processor</h1>
+
+<ul>
+<li>Stores report data on the Puppet Master as YAML in the <code>reportdir</code> setting</li>
+<li>Available for external processing by custom tooling</li>
+<li>Default report processor</li>
+<li>
+<p>Reports collect quickly, perform some maintenance on them:</p>
+
+<pre>
+tidy { '/var/lib/puppet/reports':
+  age     =&gt; '30d',
+  matches =&gt; "*.yaml",
+  recurse =&gt; true,
+  rmdirs  =&gt; false,
+  type    =&gt; ctime,
+}
+</pre>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_10_reports" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="compile-master/10_reports/5">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Log Report Processor</h1>
+
+<pre class="sh_puppet"><code>$ tail -f /var/log/puppet/puppetserver/puppetserver.log
+Compiled catalog for training.puppetlabs.vm in 0.86 seconds
+Caching catalog for training.puppetlabs.vm
+Applying configuration version '1328977795'
+Hello World!
+(/Notify[example]/message) defined 'message' as 'Hello World!'
+Finished catalog run in 0.69 seconds</code></pre>
+
+<ul>
+<li>Contains every log message in a transaction</li>
+<li>Can be used to centralize client logs into syslog</li>
+<li>Uses the system syslog calls</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_10_reports" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="compile-master/10_reports/6">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>HTTP  Report Processor</h1>
+
+<ul>
+<li>Send reports via HTTP or HTTPS</li>
+<li>Submits reports as POST requests to the address in the <code>reporturl</code> setting</li>
+<li>Body is the YAML dump of a Puppet::Transaction::Report object</li>
+<li>Content-Type is set as <code>application/x-yaml</code>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="compile-master_10_reports" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="compile-master/10_reports/7">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 3.5: Sending Reports to Foreman</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Configure your master to send reports to Foreman.</li>
+</ul>
+</li>
+<li>Steps:
+
+<ul>
+<li>Download and install the report processor.</li>
+<li>Configure the master to send reports to foreman.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="environments_01_environments" class="slide subsection" data-transition="none">
+<div class="content subsection" ref="environments/01_environments/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>4 Environment Management</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="environments_01_environments" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="environments/01_environments/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Environments</h1>
+
+<p>Self contained sandboxes</p>
+
+<ul>
+<li>Allow you to specify multiple self contained zones on a single master.</li>
+<li>Environment naming is arbitrary.</li>
+<li>Default environment is called production.
+
+<ul>
+<li><code>/etc/puppetlabs/code/environments/production</code></li>
+<li>Created by the puppetserver RPM.</li>
+</ul>
+</li>
+<li>Often used to track repository branches for development, test and production.</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="environments_01_environments" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="environments/01_environments/3">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Directory Environments</h1>
+
+<pre class="sh_sh"><code>$ tree
+├── production
+│ ├── environment.conf
+│ ├── manifests
+│ │ └── site.pp
+│ ├── modules
+│ │ └── ...
+├── feature_brt
+│ ├── manifests
+│ │ └── site.pp
+│ ├── modules
+│ │ └── ...
+└── development
+  └── ...</code></pre>
+
+<ul>
+<li>Environments are created by simply making the directory structure.</li>
+<li>Catalogs compiled for each environment take these settings into account.</li>
+<li>Code in the environment modulepath is used to build the catalog.</li>
+</ul>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>Older versions of Puppet used classic config file environment definitions. These are no longer supported in current Puppet versions.</p>
+
+<pre class="sh_sh"><code>$ vim /etc/puppetlabs/puppet/puppet.conf
+...
+[production]
+  manifest = /etc/puppetlabs/puppet/environments/production/site.pp
+  modulepath = /etc/puppetlabs/puppet/environments/production/modules
+[development]
+  manifest = /etc/puppetlabs/puppet/environments/development/site.pp
+  modulepath = /etc/puppetlabs/puppet/environments/development/modules
+[test]
+  manifest = /etc/puppetlabs/puppet/environments/test/site.pp
+  modulepath = /etc/puppetlabs/puppet/environments/test/modules</code></pre>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="environments_01_environments" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="environments/01_environments/4">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Environment Configuration</h1>
+
+<p>Global settings:</p>
+
+<ul>
+<li>
+<code>environment_timeout</code>
+
+<ul>
+<li>How often environment caches expire.</li>
+</ul>
+</li>
+<li>
+<code>basemodulepath</code>
+
+<ul>
+<li>Global modulepath appended to environment.</li>
+</ul>
+</li>
+</ul>
+
+<p>Per-environment settings:</p>
+
+<ul>
+<li>
+<code>modulepath</code>
+
+<ul>
+<li>Where Puppet searches for modules.</li>
+</ul>
+</li>
+<li>
+<code>manifest</code>
+
+<ul>
+<li>Main manifest or directory.</li>
+</ul>
+</li>
+<li>
+<code>config_version</code>
+
+<ul>
+<li>A script to determine the codebase version.</li>
+</ul>
+</li>
+<li>
+<code>environment_time</code>
+
+<ul>
+<li>Override global cache expiration.</li>
+</ul>
+</li>
+</ul>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>Puppet has reasonable defaults, so these settings often need no customization.</p>
+
+<p>For performance, it's suggested to set environments and configure your code deployment process to clear the environment cache as described in <a href="https://docs.puppetlabs.com/puppetserver/latest/admin-api/v1/environment-cache.html">https://docs.puppetlabs.com/puppetserver/latest/admin-api/v1/environment-cache.html</a>.</p>
+
+<pre class="sh_sh"><code>$ export CACERT=$(puppet master --configprint cacert)
+$ export CERT=$(puppet master --configprint hostcert)
+$ export KEY=$(puppet master --configprint hostprivkey)</code></pre>
+
+<p>Clear all environments:</p>
+
+<pre class="sh_sh"><code>$ curl -i --cert ${CERT} --key ${KEY} --cacert $CACERT} -X DELETE \
+    https://localhost:8140/puppet-admin-api/v1/environment-cache
+HTTP/1.1 204 No Content</code></pre>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="environments_01_environments" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="environments/01_environments/5">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Environment Configuration</h1>
+
+<p>Environment location settings:</p>
+
+<pre class="sh_sh"><code>$ puppet master --configprint environmentpath
+/etc/puppetlabs/code/environments
+$ puppet master --configprint basemodulepath
+/etc/puppetlabs/code/modules:/opt/puppetlabs/puppet/modules
+$ puppet master --configprint modulepath
+/etc/puppetlabs/code/environments/production/modules: \
+/etc/puppetlabs/code/modules:/opt/puppetlabs/puppet/modules</code></pre>
+
+<p>Example config file environment.conf</p>
+
+<pre class="sh_sh"><code>$ vim .../code/environments/production/environment.conf
+# Don't cache the development environment
+environment_timeout = 0
+
+# Use our custom script to get a
+# git commit for the current state of the code:
+config_version = \
+  /usr/local/bin/get_environment_commit.sh $environment</code></pre>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>The config_version script should use a full path unless it's stored within the environment directory itself. The $environment variable is available for interpolating config_version only.</p>
+
+</div>
+
+<div class="notes">
+
+<p>Disable the cache on development environments. <code>puppet agent -t</code> ignores the cache and so caching will cost resources but you won't get any benefit from it.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="environments_01_environments" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="environments/01_environments/6">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Modulepath: How Puppet finds its modules</h1>
+
+<ul>
+<li>A search path for finding modules.</li>
+<li>Default value: <code>$environment/modules:$basemodulepath</code>.</li>
+<li>Global modules installed in the <code>$basemodulepath</code>.</li>
+<li>Modules in the environment take precedence over global modules.</li>
+<li>
+<p>Install modules into environments using command line flag.</p>
+
+<pre>
+$ puppet module install puppetlabs/stdlib --environment development
+Notice: Preparing to install into /.../code/environments/development/modules ...
+Notice: Downloading from https://forgeapi.puppetlabs.com ...
+Notice: Installing -- do not interrupt ... /.../code/environments/development/modules
+└── puppetlabs-stdlib (v4.8.0)
+</pre>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="environments_01_environments" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="environments/01_environments/7">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Custom Plugin Limitations</h1>
+
+<p>Puppet extensions in modules:</p>
+
+<ul>
+<li>Ruby code in modules may leak between environments.</li>
+<li>This is due to the Ruby process model and is indeterminate.</li>
+<li>Only affects Ruby code executed by the master during compilation:
+
+<ul>
+<li>If you update a native type and add or remove attributes then you'll get errors about invalid parameters.</li>
+<li>If you update a native type and the parameter validation changes, then the proper validation may not be used.</li>
+<li>If you update functions, the wrong version of the function may be executed.</li>
+</ul>
+</li>
+<li>When developing custom extensions, test on separate standalone masters.</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="environments_01_environments" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="environments/01_environments/8">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Agent Specific Environments</h1>
+
+<ul>
+<li>Foreman can be configured to allow the agent to choose an environment.</li>
+<li>Useful for short-lived environment testing.
+
+<ul>
+<li>Often the case with feature branch development practices.</li>
+</ul>
+</li>
+<li>Specify environment on command line:
+
+<ul>
+<li>￼<code>puppet agent -t --environment env</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>Configure permanently in <code>puppet.conf</code> on the agent:</p>
+
+<pre class="sh_sh"><code>$ vim /etc/puppetlabs/puppet/puppet.conf
+[agent]
+  environment = testing_feature</code></pre>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>Using agent specified environments means that it's possible to assign configuration classes that don't exist in the requested environment. It's up to the user to reconcile that, since the classifier cannot validate class availability.</p>
+
+<p>Foreman Plugin <code>noenv</code> in version 0.5 doesn't work with foreman 1.12.</p>
+
+</div>
+
+<div class="notes">
+
+<p>The precedence of environment settings changed from Puppet 3 to Puppet 4</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="environments_02_deploying" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="environments/02_deploying/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Puppetfile</h1>
+
+<p>Describes the modules to be installed in an environment.</p>
+
+<pre class="sh_sh"><code>$ vim /etc/puppetlabs/code/environments/production/Puppetfile
+forge "http://forge.puppetlabs.com"
+
+mod "puppetlabs/stdlib"
+mod "puppetlabs/ntp", "3.0.0"
+
+mod "apt",
+  :git =&gt; "git://github.com/puppetlabs/puppetlabs-apt.git",
+  :ref =&gt; "testing_branch"</code></pre>
+
+<ul>
+<li>A Puppetfile lives in the root of a Puppet modulepath.</li>
+<li>Environment will be populated with all the modules listed.</li>
+<li>Eliminates the need to copy external modules into your codebase.</li>
+<li>Best practice is to develop your own modules in separate repositories.</li>
+</ul>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>Each mod entry in the Puppetfile will provide a module in that environment. These typically come from the Forge or GitHub. Environments can "mix &amp; match" by using the Puppetfile to describe only external modules and continue to maintain a large &amp; monolithic repository containing all internal modules. However, sites who have fully embraced these dynamic ideals will have environments that consist solely of the Puppetfile.</p>
+
+<p>When using a git source, the :ref argument allows you to specify a branch, commit, or tag (anything git can checkout).</p>
+
+<p>Some of the modules this Puppetfile manages include:
+* ￼mod "puppetlabs/stdlib"
+ * Uses latest razor module from the Forge.
+* mod "puppetlabs/ntp", "3.0.0"
+ * Uses ntp version 3.0.0 from the Forge.
+* The :git argument allow us to fetch module repositories directly from git. If we need a specific commit, release, or tag, we can specify that with the :ref argument.</p>
+
+<p>People often ask why we choose to develop each module in a separate repository. This decouples modules from one another. One module can be developed and tagged with a release completely independently of another. This means that there are fewer chances for conflicting changes, and it helps developers stay in the modular mindset and develop more robust modules that are not tightly coupled to the internals of each other.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="environments_02_deploying" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="environments/02_deploying/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Deploying Environmets</h1>
+
+<p>Expand a Puppetfile to populate a single environment via r10k:</p>
+
+<pre class="sh_sh"><code>$ cd /etc/puppetlabs/code/environments/training
+$ tree
+.
+├── manifests
+│ └── site.pp
+├── modules
+└── Puppetfile
+
+$ r10k puppetfile install
+$ ls modules/
+apt   ntp   stdlib</code></pre>
+
+<p>Typically used to deploy Puppet environments described in a git repository.</p>
+
+<ul>
+<li>r10k deploy environment -p</li>
+<li>Generates Puppet environments for each branch of a control repository.</li>
+<li>Uses the Puppetfile from each branch to define that environment.</li>
+</ul>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>The shell transcript shows an empty modules directory that is populated by running r10k's puppetfile install command. It is possible to include modules directly in the control repository in this directory, but this is only recommended for very simple modules. In this case, care must be taken to ensure that the same modules don't exist in the repository and in the Puppetfile.
+On new installations, we recommend the use of PE Code Manager, which is the r10k tool integrated into the Puppetserver, with additional features, such as queuing catalog compiles during a codebase deployment to prevent inconsistent catalogs with half-deployed code. The FileSync service will distribute code amongst each master in your infrastructure. This runs on the Puppetserver and exposes a new commit endpoint to trigger deployment.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="environments_03_exercise_r10k" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="environments/03_exercise_r10k/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 4.1: Deploying Environments</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Create a git repository on your master and write a hook to deploy environments automaticaly.</li>
+</ul>
+</li>
+<li>Steps:
+
+<ul>
+<li>Create a git repository on your master.</li>
+<li>Install and configure r10k on the master.</li>
+<li>Clone, edit and push the repository in a working directory.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_01_tuning" class="slide subsection" data-transition="none">
+<div class="content subsection" ref="scaling/01_tuning/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>5 Scaling Puppet</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_01_tuning" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/01_tuning/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Start With Tuning</h1>
+
+<p>The best scaling is scaling you don't need to do.</p>
+
+<ul>
+<li>Complexity inevitably adds fragility.</li>
+<li>Identify requirements before assuming load balancing is necessary.</li>
+<li>High Availability has a different meaning for configuration management.
+
+<ul>
+<li>Agents apply cached catalog if master is unavailable.</li>
+<li>Restoring master from backup is a short process.</li>
+<li>New configuration doesn't get propagated for a short period.</li>
+</ul>
+</li>
+<li>Many parameters for tuning Puppet services.</li>
+</ul>
+
+<div class="notes">
+
+<p>In short: High availability is often requested but rarely needed. Better aim for a fast recovery strategy from master (of masters) loss. The only thing lost while a master of masters is lost is the availability to apply configuration changes.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_02_puppetserver" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/02_puppetserver/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Tuning Puppetserver JVM</h1>
+
+<pre class="sh_sh"><code>$ vim /etc/sysconfig/puppetserver
+...
+JAVA_ARGS="-Xms2G -Xmx2G -XX:MaxPermSize=256m"
+
+$ vim /etc/puppetlabs/puppetserver/conf.d/puppetserver.conf
+jruby-puppet: {
+  ...
+  # (optional) maximum number of JRuby instances to allow
+  max-active-instances: 2
+
+  # (optional) maximum number of requests per JRuby instance
+  max-requests-per-instance: 100
+}</code></pre>
+
+<div class="handouts">
+
+<p>Note:</p>
+
+<p>Defaults:</p>
+
+<ul>
+<li>Number of jRuby instances:
+
+<ul>
+<li>number of CPUs - 1, with maximum of 2</li>
+</ul>
+</li>
+<li>JVM Heap size
+
+<ul>
+<li>2gb, enough for 4 average sized jRuby instances.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_02_puppetserver" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/02_puppetserver/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Estimating jRuby instances required</h1>
+
+<p></p>
+<center><img src="./file/scaling/../_images/scaling/jruby_instances.png" width="395" height="170" alt="jRuby Instances"></center>
+
+<p>This formula assumes an even temporal load with no surges. As such, it's a theoretical estimate only and no replacement for actual benchmarking.</p>
+
+<ul>
+<li>Estimate parameter for a given load.</li>
+<li>Should not exceed one less than the number of processors.</li>
+<li>On average, a jRuby instance consumes roughly 512mb of memory.</li>
+<li>JVM heap must be adjusted to accommodate if you exceed 4 jRuby instances.</li>
+</ul>
+
+<div class="notes">
+
+<p>Using gigantic hosts as puppetserver is not as useful as it seems to be. Restarting the puppetserver means restarting all jRuby instances. Using too many of those instances results in service restart times over 10 minutes.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_02_puppetserver" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/02_puppetserver/3">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Rules of Thumb</h1>
+
+<ul>
+<li>JVM OutOfMemory errors:
+
+<ul>
+<li>JVM shutdown with stacktrace.</li>
+<li>Logged in corresponding application's logfile.</li>
+<li>jRuby instances have grown too large for JVM heap.</li>
+<li>Resolution: increase heap or decrease jRuby instances.</li>
+</ul>
+</li>
+<li>System error:
+
+<ul>
+<li>JVM killed by kernel.</li>
+<li>Logged via syslog.</li>
+<li>Heap has grown too large for system RAM.</li>
+<li>Resolution: decrease heap size and jRuby instances.</li>
+</ul>
+</li>
+</ul>
+
+<p>You’ll also want to allocate a little extra heap to be used by the rest of the things going on in Puppet Server: the web server, etc. So, a good rule of thumb might be 512MB + (max-active-instances * 512MB).</p>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_02_puppetserver" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/02_puppetserver/4">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Environment Caching</h1>
+
+<p>Disk read speed vs. memory usage.</p>
+
+<ul>
+<li>Puppetserver caches codebase.
+
+<ul>
+<li>All code in environment is cached.</li>
+<li>Code is cached as compiler loads it.</li>
+<li>Not read from disk again until cache expiration.</li>
+<li>Can use a lot of memory for large or numerous environments!</li>
+</ul>
+</li>
+<li>Set unlimited cache to increase performance.
+
+<ul>
+<li>Must expire cache each time code is deployed.</li>
+<li><code>environment_timeout = unlimite</code></li>
+</ul>
+</li>
+<li>Disable cache to lower memory usage
+
+<ul>
+<li><code>environment_timeout = 0</code></li>
+</ul>
+</li>
+</ul>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>environment_timeout is a Puppet configuration setting that can go in or in an individual environment's environment.conf.</p>
+
+<p>Tip: The Node Classifier will periodically request a list of all classes in all environments from the master. This means that each jRuby that has ever serviced that request will have the full codebase for each environment cached in memory.
+In a master-of-masters configuration, the toplevel master-of-masters is the only node servicing this request. In this configuration, it's often useful to configure this master with only one or two jRuby instances and a large amount of heap to minimize the memory usage and to minimize the number of times that a jRuby instance must be started cold and load the entire codebase at once.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_02_puppetserver" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/02_puppetserver/5">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Linux System Settings</h1>
+
+<p>Resource limits can affect compilation.</p>
+
+<ul>
+<li>System setting controls process resource limits.</li>
+<li>Increase the number of file handles the Master can have open at any time.</li>
+<li>Configured per user.</li>
+</ul>
+
+<p></p>
+<pre>
+  $ vim /etc/security/limits.d/30-puppet.conf
+  puppet  hard  nofile      65535
+  </pre>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_03_puppetdb" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/03_puppetdb/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Tuning PuppetDB</h1>
+
+<ul>
+<li>Gigantic reports can cause memory exhaustion.</li>
+<li>Normally only seen when managing many thousands of resources.</li>
+<li>Symptoms:
+
+<ul>
+<li>Successful agent runs are marked as unresponsive.</li>
+<li>PuppetDB Command Queue increases.</li>
+<li>PuppetDB DLO Size on Disk increases.</li>
+</ul>
+</li>
+<li>Default heap size is 192mb.
+
+<ul>
+<li>Configure with JAVA_ARGS in <code>/etc/sysconfig/puppetdb</code>.</li>
+</ul>
+</li>
+<li>Set threads to use for command processing:
+
+<ul>
+<li>Option threads in <code>/etc/puppetlabs/puppetdb/conf.d/config.ini</code>.</li>
+</ul>
+</li>
+</ul>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p><a href="https://docs.puppetlabs.com/puppetdb/latest/maintain_and_tune.html">https://docs.puppetlabs.com/puppetdb/latest/maintain_and_tune.html</a></p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_03_puppetdb" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/03_puppetdb/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>PuppetDB Dashboard</h1>
+
+<ul>
+<li>Enable dashboard by setting to listen on 0.0.0.0:
+
+<ul>
+<li>Option host in <code>/etc/puppetlabs/puppetdb/conf.d/jetty.ini</code>.</li>
+</ul>
+</li>
+<li><a href="http://puppetdb.example.org:8080">http://puppetdb.example.org:8080</a></li>
+</ul>
+
+<p></p>
+<center><img src="./file/scaling/../_images/scaling/puppetdb_dashboard.png" width="2052" height="1250" style="width:950px;height:465px;" alt="PuppetDB Dashboard"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_04_activemq" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/04_activemq">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Tuning ActiveMQ</h1>
+
+<ul>
+<li>ActiveMQ is used as a message broker for orchestration.</li>
+<li>Increase heap only if ActiveMQ service runs out of memory.</li>
+<li>Normally only seen when orchestrating thousands of nodes.</li>
+<li>Default heap size is 512mb.</li>
+<li>...</li>
+</ul>
+
+<p>System limits for orchestration thousands of nodes:</p>
+
+<pre class="sh_sh"><code>$ vim /etc/security/limits.d/30-activemq.conf
+activemq  soft  nproc     8192
+activemq  hard  nproc     8192
+activemq  soft  nofile    16384
+activemq  hard  nofile    16384</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_05_baseline" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/05_baseline/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Recommended Baseline</h1>
+
+<p>Puppetserver running on the JVM</p>
+
+<ul>
+<li>Roughly 500 nodes.</li>
+<li>Check-in time set to 30 mins with a 5 min splay (default).</li>
+<li>Hardware requirements:
+
+<ul>
+<li>4 core processor</li>
+<li>16 GBs of RAM</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_05_baseline" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/05_baseline/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Thundering Herd</h1>
+
+<p>When many nodes check at once.</p>
+
+<ul>
+<li>Caused by unevenly distributed node check-in times.</li>
+<li>Large groups of nodes using a random splay may converge on certain times.
+
+<ul>
+<li>Side effect of using a pseudo random number.</li>
+</ul>
+</li>
+<li>Sometimes alleviated by running Agent as a cron job.
+
+<ul>
+<li>Disable the Puppet Agent service.</li>
+<li>Use <code>fqdn_rand()</code> to randomize checkin time.</li>
+</ul>
+</li>
+</ul>
+
+<p>In example implementated as puppet cron resource:</p>
+
+<pre class="sh_code"><code>$first_run = fqdn_rand(30)
+$second_run = fqdn_rand(30) + 30
+
+cron { 'cron.puppet':
+  command =&gt; "/opt/puppetlabs/bin/puppet agent -t &gt; \
+      /dev/null", user =&gt; "root",
+  minute =&gt; [ $first_run, $second_run ],
+}</code></pre>
+
+<div class="handouts">
+
+<p>Note:</p>
+
+<p>fqdn_rand() will generate a predictable random number. In other words, the distribution of output is random, but it will always generate the same random number for a given node, based on its fully qualified domain name.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_05_baseline" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/05_baseline/3">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>When to Scale</h1>
+
+<ul>
+<li>Watch agent run reports:
+
+<ul>
+<li>Run times will spike by orders of magnitude.</li>
+<li>Timeouts when retrieving catalogs.</li>
+</ul>
+</li>
+<li>Monitor server metrics:
+
+<ul>
+<li>top, atop and friends</li>
+<li>CPU utilization stays at 100% for a significant period.</li>
+<li>Indicates overloaded master.</li>
+<li>Some cores maxed but others unloaded.</li>
+<li>Indicates insufficient number of jRuby instances.</li>
+<li>Count number of compiles in master logs.</li>
+<li>Should see almost exactly nodes * checkins/h compiles.</li>
+<li>Use third party tools to monitor metrics</li>
+</ul>
+</li>
+</ul>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>The total number of compilations happening across all nodes should be almost exactly equal to the number of nodes in your infrastructure multiplied by the expected number of runs per hour. If significantly fewer compiles occur, then the master is overloaded and is not able to keep up.
+For example, if you have 1000 nodes, and you've left the set at its default of 30 minutes, then you should see a total of 2000 catalogs compiled across all of your compile masters.
+This is an empirical form of the simple formula we use to predict the number of masters that will be required for a given workload.</p>
+
+<p>This is a simple Bash script that can count the number of catalog compiles occurring on a compile master each hour for the current day.</p>
+
+<pre class="sh_code"><code>#! /bin/sh
+LOG='/var/log/puppetlabs/puppetserver/puppetserver.log'
+DATE=$(date +"%Y-%m-%d")
+NOW=$(date +%H)
+for i in $(seq 0 ${NOW})
+do
+  num=$(printf "%02d" $i)
+  echo -n "${DATE} ${num}: "
+  grep 'Compiled catalog' ${LOG} | grep "${DATE} ${num}:" | wc -l
+done</code></pre>
+
+</div>
+
+<div class="notes">
+
+<p>Third party tools like Logstash / Elastic Stack will be discussed later. Other options like Graphite or Icinga 2 with Graphite might be added to the training later.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_05_baseline" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/05_baseline/4">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Estimating Requirements</h1>
+
+<p>Based on catalog compile time:</p>
+
+<p></p>
+<center><img src="./file/scaling/../_images/scaling/master_instances.png" width="465" height="183" alt="Calculate numer of masters"></center>
+
+<ul>
+<li>Helps spec infrastructure design and hardware purchasing.</li>
+<li>Calculates theoretical minimum number of masters for a given load.</li>
+<li>Assumes dedicated servers.</li>
+</ul>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>This is a rough estimate only and should be taken as a starting point. Round up to the next whole number and benchmark some Puppet runs. Make sure to account for variability and spikes in load.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_05_baseline" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="scaling/05_baseline/5">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 5.1: Estimating Capacity</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Estimate how many Puppet Masters you will need to support your infrastructure.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_06_architectures" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/06_architectures/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Recommended Architectures</h1>
+
+<p>Choice of layout depends greatly on catalog complexity.</p>
+
+<ul>
+<li>Small scale:
+
+<ul>
+<li>Up to 500 nodes.</li>
+</ul>
+</li>
+<li>Medium scale with compile masters:
+
+<ul>
+<li>Approximately 1500 nodes per additional compile master.</li>
+</ul>
+</li>
+<li>Large scale:
+
+<ul>
+<li>Up to 7000 nodes.</li>
+</ul>
+</li>
+</ul>
+
+<p>An infrastructure supporting more than 7000 nodes is considered Extra Large and may require custom architecture design.</p>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_06_architectures" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/06_architectures/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Small Scale Architecture</h1>
+
+<p></p>
+<center><img src="./file/scaling/../_images/scaling/small_scale.png" width="410" height="631" style="width:35%;height:35%;" alt="Small scale architecture"></center>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>Small Scale:</p>
+
+<ul>
+<li>Single all-in-one server.</li>
+<li>Puppet Enterprise default install.</li>
+<li>Up to 500-800 nodes.</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_06_architectures" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/06_architectures/3">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Medium Scale Architecture</h1>
+
+<p></p>
+<center><img src="./file/scaling/../_images/scaling/medium_scale.png" width="880" height="931" style="width:50%;height:50%;" alt="Medium scale architecture"></center>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>Medium Scale:</p>
+
+<ul>
+<li>Two or more masters behind a load balancer.</li>
+<li>Similar to the classroom layout.</li>
+<li>Supports approximately 1500 nodes per additional compile master.</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_06_architectures" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/06_architectures/4">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Configuring Compile Masters</h1>
+
+<ul>
+<li>A pool of Masters behind a load balancer.</li>
+</ul>
+
+<p>Each compile master must have a dns_alt_names setting that matches the DNS name of the load balancer so that SSL certificates validate when the agent requests a catalog from the load balancer and is connected to any one of the compile masters.</p>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_06_architectures" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/06_architectures/5">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>One Shared CA for all Multiple Masters</h1>
+
+<p>One Puppet Master is designated as the ca_server.</p>
+
+<ul>
+<li>One CA signs all certificates.</li>
+<li>All agents and all masters trust each other.</li>
+<li>Allows agents to request a catalog from any master with a signed certificate.</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_06_architectures" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/06_architectures/6">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Load Balancing</h1>
+
+<p>Using HAProxy as an example.</p>
+
+<ul>
+<li>HAProxy is a software defined load balancer for TCP &amp; HTTP.</li>
+<li>Puppet modules use exported resources to autoconfigure clustered services.</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_06_architectures" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/06_architectures/7">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Load Balancing</h1>
+
+<p>Export a resource from each compile master:</p>
+
+<pre class="sh_code"><code>node /^compile\d+.localdomain$/ {
+  @@haproxy::balancermember { "puppet_${::fqdn}":
+    listening_service =&gt; 'puppet00',
+    server_names      =&gt; $::hostname,
+    ipaddresses       =&gt; $::ipaddress,
+    ports             =&gt; '8140',
+    options           =&gt; 'check',
+  }
+}</code></pre>
+
+<p>Collect resources on load balancer to build records for each:</p>
+
+<pre class="sh_code"><code>node 'proxy.localdomain' {
+  include haproxy
+  haproxy::listen { 'puppet00':
+    ipaddress =&gt; $::ipaddress,
+    ports     =&gt; '8140',
+  }
+  Haproxy::Balancermember &lt;&lt;| listening_service == 'puppet00' |&gt;&gt;
+}</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_06_architectures" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="scaling/06_architectures/8">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Large Scale Architecture</h1>
+
+<p>Split Installation with compile master(s):</p>
+
+<p></p>
+<center><img src="./file/scaling/../_images/scaling/large_scale.png" width="1930" height="687" style="width:90%;height:90%;" alt="Large scale architecture"></center>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>Large scale:</p>
+
+<ul>
+<li>Split install with multiple compile nodes behind a load balancer.</li>
+<li>Separate ActiveMQ hub &amp; spoke nodes, as covered in the Orchestration section.</li>
+<li>Tested with 7000 nodes and three compile masters.</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="scaling_07_exercise_loadbalancer" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="scaling/07_exercise_loadbalancer/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 5.2: Load Balance Puppet</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Configure your Puppet Master to work with the classroom proxy.</li>
+</ul>
+</li>
+<li>Steps:
+
+<ul>
+<li>Add your master it to the classroom load balancer pool.</li>
+<li>Run your Agent node(s) against the classroom proxy.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_01_functionality" class="slide subsection" data-transition="none">
+<div class="content subsection" ref="orchestration/01_functionality/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>6 Orchestration</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_01_functionality" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="orchestration/01_functionality/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Functionality</h1>
+
+<p>Benefits you can achieve with orchestration:</p>
+
+<ul>
+<li>Invoke predefined actions in parallel across any number of nodes.</li>
+<li>Simple to use command line tools to call remote agents.</li>
+<li>Built-in agents for common functionality:
+
+<ul>
+<li>Interact with common resources.</li>
+<li>Manage packages and services.</li>
+<li>Control Puppet.</li>
+</ul>
+</li>
+<li>Eliminate complex naming conventions for hostnames as a means of identity.</li>
+<li>Produce custom reports about your infrastructure.</li>
+<li>A framework to build custom orchestration tools and interfaces.</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_01_functionality" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="orchestration/01_functionality/3">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>MCollective</h1>
+
+<p>The Puppet all-in-one package brings MCollective for orchestration</p>
+
+<ul>
+<li>Framework for orchestration</li>
+<li>Needs Message broker for communication (middleware)
+
+<ul>
+<li>Servers (on managed nodes) subscribe to topics</li>
+<li>Clients (for Admins) post messages to queues/topics</li>
+<li>Broker stores and ships messages</li>
+<li>Single instance or network of brokers</li>
+</ul>
+</li>
+<li>Several brokers are supported
+
+<ul>
+<li>ActiveMQ (default)</li>
+<li>RabbitMQ</li>
+</ul>
+</li>
+</ul>
+
+<div class="handouts">
+
+<p>There is a third party repository for ActiveMQ on RHEL/CentOS: </p>
+
+<pre class="sh_puppet"><code>yumrepo { "activemq":
+  name =&gt; 'lkiesow-apache-activemq-dist',
+  baseurl =&gt; 'https://copr-be.cloud.fedoraproject.org/results/lkiesow/apache-activemq-dist/epel-7-$basearch/',
+  descr =&gt; 'Copr repo for apache-activemq-dist owned by lkiesow',
+  skip_if_unavailable =&gt; true,
+  enabled =&gt; true,
+  gpgcheck =&gt; true,
+  gpgkey =&gt; 'https://copr-be.cloud.fedoraproject.org/results/lkiesow/apache-activemq-dist/pubkey.gpg',
+}</code></pre>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_01_functionality" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="orchestration/01_functionality/4">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Middleware Terminology</h1>
+
+<ul>
+<li>Middleware:       A publish subscribe based system like Apache ActiveMQ.</li>
+<li>Middleware        Broker: A message queuing bus that transmits messages between peers.</li>
+<li>Middleware Topic: Messages sent to a topic are received by all subscribers.</li>
+<li>Subscriber:       Consumes messages from a topic.</li>
+<li>Publisher:        Writes messages to a topic.</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_01_functionality" class="slide " data-transition="none">
+<div class="content " ref="orchestration/01_functionality/5">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Broker Architecture</h1>
+
+<p></p>
+<center><img src="./file/orchestration/../_images/orchestration/middleware_broker.png" width="536" height="385" alt="Middleware broker"></center>
+
+<div class="notes">
+
+<p>Keep in mind that "server" is the software that runs on the orchestrated hosts.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_01_functionality" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="orchestration/01_functionality/6">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Component Terminology</h1>
+
+<ul>
+<li>Server
+
+<ul>
+<li>Application server for Agents and broker connections</li>
+<li>On every host, managed or admin workstation</li>
+</ul>
+</li>
+<li>Agent
+
+<ul>
+<li>Runs on server</li>
+<li>Ruby code for a set of specific tasks</li>
+<li>Control Puppet, manage packages, manage services, etc.</li>
+</ul>
+</li>
+<li>Action
+
+<ul>
+<li>Task provided by Agent</li>
+<li>e.g. <code>start</code>, <code>stop</code>, <code>status</code> of Service</li>
+</ul>
+</li>
+<li>Application
+
+<ul>
+<li>MCollective plugin</li>
+<li>Sends messages to Agents</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_02_mcollective" class="slide smaller" data-transition="none">
+<div class="content smaller" ref="orchestration/02_mcollective/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>
+<code>mco</code> Syntax</h1>
+
+<pre class="sh_sh"><code>mco [application] [command] [arguments] [options]</code></pre>
+
+<ul>
+<li>Application
+
+<ul>
+<li>The name of the application you want to start</li>
+</ul>
+</li>
+<li>Command
+
+<ul>
+<li>Application command to run</li>
+<li>Often executes actions on agents</li>
+</ul>
+</li>
+<li>Arguments
+
+<ul>
+<li>Command arguments</li>
+<li>Passed to actions on agents</li>
+</ul>
+</li>
+<li>Options
+
+<ul>
+<li>
+<code>mco</code> options</li>
+<li>often filters</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_02_mcollective" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="orchestration/02_mcollective/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>
+<code>mco</code> help</h1>
+
+<ul>
+<li><code>mco help [agent]</code></li>
+<li><code>mco [application] --help</code></li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_02_mcollective" class="slide smaller" data-transition="none">
+<div class="content smaller" ref="orchestration/02_mcollective/3">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>See all connected hosts</h1>
+
+<pre class="sh_sh"><code>$ mco ping
+overlord.localdomain                     time=71.35 ms
+spoke01.localdomain                      time=111.82 ms
+
+
+---- ping statistics ----
+2 replies max: 111.82 min: 71.35 avg: 91.59</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_02_mcollective" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="orchestration/02_mcollective/4">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Use facts for filtering</h1>
+
+<ul>
+<li>MCollective can use facts for filtering</li>
+<li>Per default MCollective reads fact from a YAML file
+
+<ul>
+<li>Fill the YAML file with facts</li>
+<li>use the <code>facter</code> plugin</li>
+</ul>
+</li>
+</ul>
+
+<div class="handouts">
+
+<p>Using facter can be errournous due to the slow execution of facter.</p>
+
+<p>An example how to create the facts YAML file can be found at <a href="https://docs.puppet.com/mcollective/plugin_directory/facter_via_yaml.html">https://docs.puppet.com/mcollective/plugin_directory/facter_via_yaml.html</a></p>
+
+<p>If you still want to use facter: <a href="https://github.com/puppetlabs/mcollective-facter-facts">https://github.com/puppetlabs/mcollective-facter-facts</a></p>
+
+</div>
+
+<div class="notes">
+
+<p>Using facter can be errournous due to the slow execution of facter.</p>
+
+<p>An example how to create the facts YAML file can be found at <a href="https://docs.puppet.com/mcollective/plugin_directory/facter_via_yaml.html">https://docs.puppet.com/mcollective/plugin_directory/facter_via_yaml.html</a></p>
+
+<p>If you still want to use facter: <a href="https://github.com/puppetlabs/mcollective-facter-facts">https://github.com/puppetlabs/mcollective-facter-facts</a></p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_02_mcollective" class="slide smaller" data-transition="none">
+<div class="content smaller" ref="orchestration/02_mcollective/5">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Use facts for filtering</h1>
+
+<pre class="sh_sh"><code>$ mco ping --with-fact osfamily=RedHat
+spoke01.localdomain                      time=60.12 ms
+overlord.localdomain                     time=100.36 ms
+
+
+---- ping statistics ----
+2 replies max: 100.36 min: 60.12 avg: 80.24</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_02_mcollective" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="orchestration/02_mcollective/6">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Use plugins</h1>
+
+<ul>
+<li>Packaged for supported operating systems</li>
+<li>installable as ruby files into directory structure</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_02_mcollective" class="slide smaller" data-transition="none">
+<div class="content smaller" ref="orchestration/02_mcollective/7">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Use a MCollective plugin to find vulnerable openssl versions</h1>
+
+<pre class="sh_sh"><code>$ mco rpc package status package=openssl
+overlord.localdomain                     
+    Arch: x86_64
+  Ensure: 1:1.0.1e-42.el7.9
+   Epoch: 1
+    Name: openssl
+  Output: nil
+Provider: yum
+ Release: 42.el7.9
+ Version: 1.0.1e
+
+spoke01.localdomain                      
+   Arch: x86_64
+...
+Summary of Ensure:
+
+1:1.0.1e-42.el7.9 = 2</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_02_mcollective" class="slide smaller" data-transition="none">
+<div class="content smaller" ref="orchestration/02_mcollective/8">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Use MCollective to install software</h1>
+
+<pre class="sh_sh"><code>$ mco rpc package install package="lynx"</code></pre>
+
+<p>It is still better to use Puppet to install software</p>
+
+<div class="handouts">
+
+<p>Keep in mind you can combine all MCollective commands with the filters mentioned before.</p>
+
+</div>
+
+<div class="notes">
+
+<p>Keep in mind you can combine all MCollective commands with the filters mentioned before.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_02_mcollective" class="slide smaller" data-transition="none">
+<div class="content smaller" ref="orchestration/02_mcollective/9">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Use MCollective to update software (in batches)</h1>
+
+<pre class="sh_sh"><code>$ mco rpc package update package=ca-certificates --batch=5 --batch-sleep=60</code></pre>
+
+<h1>Use MCollective to manage Puppet</h1>
+
+<p>Trigger Puppet runs via MCollective</p>
+
+<pre class="sh_sh"><code>$ mco puppet runall 1</code></pre>
+
+<p>The <code>1</code> indicates that one node after the other should run. Increase for concurrent runs.</p>
+
+<div class="handouts">
+
+<p>You will need the following packages for this to work:</p>
+
+<ul>
+<li>mcollective-puppet-agent (on all hosts)</li>
+<li>mcollective-puppet-client (on all hosts)</li>
+<li>mcollective-puppet-common (on the host you run the command)</li>
+</ul>
+
+</div>
+
+<div class="notes">
+
+<p>You will need the following packages for this to work:</p>
+
+<ul>
+<li>mcollective-puppet-agent (on all hosts)</li>
+<li>mcollective-puppet-client (on all hosts)</li>
+<li>mcollective-puppet-common (on the host you run the command)</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_02_mcollective" class="slide smaller" data-transition="none">
+<div class="content smaller" ref="orchestration/02_mcollective/10">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Use MCollective to manage services</h1>
+
+<pre class="sh_sh"><code>$ mco rpc service status service=puppet</code></pre>
+
+<p>Use Puppet for permanent changes and MCollective for short term changes in test environments, during outages, etc.</p>
+
+<div class="handouts">
+
+<p>You will need the following packages for this to work:</p>
+
+<ul>
+<li>mcollective-service-agent (on all hosts)</li>
+<li>mcollective-service-client (on all hosts)</li>
+<li>mcollective-service-common (on the host you run the command)</li>
+</ul>
+
+</div>
+
+<div class="notes">
+
+<p>You will need the following packages for this to work:</p>
+
+<ul>
+<li>mcollective-service-agent (on all hosts)</li>
+<li>mcollective-service-client (on all hosts)</li>
+<li>mcollective-service-common (on the host you run the command)</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_03_lab_connectmcollective" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="orchestration/03_lab_connectmcollective/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 6.1: Connect your MCollective to the classroom</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Connect your MCollective servers to the central ActiveMQ infrastructure</li>
+<li>Run MCollective <code>ping</code> to see all connected nodes</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_04_lab_mcollective_puppet" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="orchestration/04_lab_mcollective_puppet/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 6.2: Stop and start Puppet via MCollective</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Stop Puppet via MCollective</li>
+<li>Run Puppet once via MCollective</li>
+<li>Start Puppet via MCollective</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_04_lab_mcollective_puppet" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="orchestration/04_lab_mcollective_puppet/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Use MCollective to create reports</h1>
+
+<ul>
+<li>Use <code>.mc</code> scripts to format reports</li>
+<li>Uses facts from YAML file or <code>facter</code> </li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="orchestration_05_mcollective_inventory_script" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="orchestration/05_mcollective_inventory_script/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 6.3: Create an inventory script</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Create a script for MCollective to create inventory reports</li>
+<li>Run MCollective with your script</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_01_rest-api" class="slide subsection" data-transition="none">
+<div class="content subsection" ref="integrations/01_rest-api/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>7 Integrations</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_01_rest-api" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/01_rest-api/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Componets Rest APIs</h1>
+
+<p>Interact with component services.</p>
+
+<ul>
+<li>Retrieve infrastructure data from PuppetDB.</li>
+<li>??? Foreman ??? Query the Node Classifier for classification information.</li>
+<li>??? Foreman ??? Add rules to the Node Classifier during the provisioning process.</li>
+<li>Sign certificates for newly provisioned nodes.</li>
+<li>Clear environment caches on compile masters when deploying codebase.</li>
+<li>...</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_01_rest-api" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/01_rest-api/3">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>REST API Methods</h1>
+
+<p>Network based service interactions:</p>
+
+<pre class="sh_code"><code>https://www.example.org/api/v1/users/sheldon.cooper
+^------Location-------^ ^-Endpoint-^ ^---Entity---^</code></pre>
+
+<ul>
+<li>URI encodes network location, endpoint, and entity or collection.</li>
+<li><p>HTTP method describes the action to perform on the entity.</p></li>
+<li>
+<p>Methods:</p>
+
+<ul>
+<li>POST: Create a new entity.</li>
+<li>GET: Retrieve a representation of an entity or collection.</li>
+<li>PUT: Update an entity by replacing it with new data.</li>
+<li>DELETE: Delete an entity or collection.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_01_rest-api" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/01_rest-api/4">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Using the REST API</h1>
+
+<p>Setting up the curl connection:</p>
+
+<pre class="sh_sh"><code>$ curl --cert /etc/puppetlabs/puppet/ssl/certs/certname.pem \
+    --key /etc/puppetlabs/puppet/ssl/private_keys/certname.pem \
+    --cacert /etc/puppetlabs/puppet/ssl/ca/ca_crt.pem \
+    -H 'Accept: yaml' https://master:8140/puppet/v3/node \
+    /yourname.localdomain?environment=production</code></pre>
+
+<ul>
+<li>Can reuse agent certificates.</li>
+<li>Can accept yaml or json as return types.</li>
+<li>Default method to GET request.</li>
+<li>Make PUT request and send data:
+
+<ul>
+<li>-X PUT --data '{"desired_state":"revoke"}' -H "Content-Type: text/pson"</li>
+</ul>
+</li>
+<li>Make a DELETE request:
+
+<ul>
+<li>-X DELETE</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_02_puppetserver" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/02_puppetserver/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Puppet Master REST API</h1>
+
+<p>https://<code>master</code>:8140/puppet/v3/<code>endpoint</code>/<code>certname</code>?environment=<code>env</code></p>
+
+<p>Retrieve information with a GET request.</p>
+
+<ul>
+<li>Request a catalog:
+
+<ul>
+<li>GET /puppet/v3/catalog/<code>certname</code>?environment=<code>env</code>
+</li>
+</ul>
+</li>
+<li>Request node information, including facts:
+
+<ul>
+<li>GET /puppet/v3/node/<code>certname</code>?environment=<code>env</code>
+</li>
+</ul>
+</li>
+<li>Request master status:
+
+<ul>
+<li>GET /puppet/v3/status/<code>certname</code>?environment=production</li>
+</ul>
+</li>
+<li>Authorization configured in <code>auth.conf</code>.</li>
+</ul>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>The status endpoint requires values for the name and the environment, simply because that's the required argument format. These values are discarded and not used for anything.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_02_puppetserver" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="integrations/02_puppetserver/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 7.1: Request a node with curl</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Instructor will enable API access in auth.conf</li>
+<li>Request node information from the Puppet Master using the command line binary.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_02_puppetserver" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/02_puppetserver/3">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Clearing Environment Caches</h1>
+
+<p>Master caches codebase for compilation performance:</p>
+
+<ul>
+<li>Configured with environment_timeout.</li>
+<li>Expire all environments with:
+
+<ul>
+<li>DELETE https://<code>master</code>:8140/puppet-admin-api/v1/environment-cache</li>
+</ul>
+</li>
+<li>Expire single named environment with:
+
+<ul>
+<li>DELETE https://<code>master</code>:8140/puppet-admin-api/v1/environment-cache?environmnet=<code>env</code>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>When running multiple compile masters, the environment cache must be cleared on each master.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_03_puppetdb" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/03_puppetdb/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>PuppetDB</h1>
+
+<p>Return resources matching the query string:</p>
+
+<ul>
+<li>Facts</li>
+<li>Resources</li>
+<li>Nodes</li>
+<li>Catalogs</li>
+<li>Metrics</li>
+<li>Reports</li>
+</ul>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>Documented at <a href="http://docs.puppetlabs.com/puppetdb/3.0/api/index.html">http://docs.puppetlabs.com/puppetdb/3.0/api/index.html</a></p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_03_puppetdb" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/03_puppetdb/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>PuppetDB</h1>
+
+<p>Query API:</p>
+
+<p>https://<code>puppetdb</code>:8081/pdb/query/v4/<code>endpoint</code></p>
+
+<p>Query string is</p>
+
+<ul>
+<li>URL-encoded JSON array</li>
+<li>Multi-dimensional</li>
+<li>Describes a complex comparison operation in prefix notation.</li>
+</ul>
+
+<p>Paged queries; e.g. "11-20 of 164"</p>
+
+<ul>
+<li>Order by a field; ascending or descending.</li>
+<li>Limit to a given number of results.</li>
+<li>Offset by a given number.</li>
+</ul>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>A simple query string might look like</p>
+
+<pre class="sh_code"><code>["and",
+  ["=", "type", "User"],
+  ["=", "title", "nick"]]'</code></pre>
+
+<p>Documentation at <a href="http://docs.puppetlabs.com/puppetdb/latest/api/query/tutorial.html">http://docs.puppetlabs.com/puppetdb/latest/api/query/tutorial.html</a></p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_03_puppetdb" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/03_puppetdb/3">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>PuppetDB</h1>
+
+<p>Example PuppetDB query:</p>
+
+<pre class="sh_sh"><code>$ curl -X GET -H "Accept: application/json" ${CERT_OPTIONS} \
+    https://master.puppetlabs.vm:8081/pdb/query/v4/resources \
+    --data-urlencode 'query=["and", ["=", "type", "Class"], \
+    ["=", "certname", "yourname.localdomain"]]'</code></pre>
+
+<p>A JSON hash is returned:</p>
+
+<pre class="sh_sh"><code>[{
+  "tags":["class"],
+  "file":null,
+  "type":"Class",
+  "title":"main",
+  "line":null,
+  "resource":"b33414118184f168ff9476785c716b2242329eeb",
+  "environment":"production",
+  "certname":"yourname.localdomain",
+  "parameters":{"name": "main"},
+  "exported":false
+}]</code></pre>
+
+<div class="notes">
+
+<p>CERT_OPTIONS could be:</p>
+
+<pre><code>--cacert /etc/puppetlabs/puppet/ssl/certs/ca.pem \
+--cert /etc/puppetlabs/puppet/ssl/certs/yourname.localdomain.pem \
+--key /etc/puppetlabs/puppet/ssl/private_keys/yourname.localdomain.pem</code></pre>
+
+</div>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>Notice that the Accept header has been updated to save the query as a plain text file:</p>
+
+<pre class="sh_sh"><code>$ cat cert_overlord.txt
+["and",
+  ["=", "type", "Class"],
+  ["=", "certname", "yourname.localdomain"]]
+
+$ curl -X GET -H "Accept: application/json" ${CERT_OPTIONS} \
+    https://overlord.localdomain:8081/pdb/query/v4/resources \
+    --data-urlencode query@cert_overlord.txt</code></pre>
+
+<p>CERT_OPTIONS could be:</p>
+
+<pre><code>--cacert /etc/puppetlabs/puppet/ssl/certs/ca.pem \
+--cert /etc/puppetlabs/puppet/ssl/certs/yourname.localdomain.pem \
+--key /etc/puppetlabs/puppet/ssl/private_keys/yourname.localdomain.pem</code></pre>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_03_puppetdb" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="integrations/03_puppetdb/4">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 7.2: List Managed Packages</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Use curl to list all the packages managed on your node.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_04_ca" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/04_ca/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Puppet Master CA REST API</h1>
+
+<p>https://<code>master</code>:8140/puppet-ca/v1/<code>endpoint</code>/<code>certname</code>?environment=<code>env</code></p>
+
+<ul>
+<li>Sign agent certificates:
+
+<ul>
+<li>PUT /puppet-ca/v1/certificate_status/<code>certname</code>?environment=<code>env</code>
+</li>
+<li>payload: ￼<code>{"desired_state":"signed"}</code>
+</li>
+</ul>
+</li>
+<li>Decommission a node:
+
+<ul>
+<li>PUT /puppet-ca/v1/certificate_status/<code>certname?</code>environment=<code>env</code>
+</li>
+<li>payload: <code>{"disered_state":"revoked"}</code>
+</li>
+<li>DELETE /puppet-ca/v1/certificate_status/<code>certname</code>?environment=<code>env</code>￼</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_04_ca" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="integrations/04_ca/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 7.3: Re-sign Agent Certificates</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Instructor will enable API access with classification.</li>
+<li>Use the certificate authority API to clean and re-sign agent certificates.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_05_foreman" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/05_foreman/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Foreman API</h1>
+
+<p>https://<code>foreman</code>/api/v2/<code>endpoint</code></p>
+
+<ul>
+<li>JSON API</li>
+<li>Shared also with Katello</li>
+<li>Requires username and password</li>
+<li>Collections are paged</li>
+<li>Search strings like provided in the WebGUI</li>
+</ul>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>Reference at <a href="https://theforeman.org/api/1.12/index.html">https://theforeman.org/api/1.12/index.html</a>.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_05_foreman" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="integrations/05_foreman/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 7.4: Use the foreman API</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Use the API to query node objects.</li>
+</ul>
+</li>
+<li>Steps:
+
+<ul>
+<li>Query the information of your master node.</li>
+<li>Query the just the status of your master.</li>
+<li>Get all nodes with CentOS on it.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_06_extend" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/06_extend/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Extend Puppet Functionality</h1>
+
+<p>Plugins in Puppet modules are distributed as needed across the infrastructure.</p>
+
+<pre class="sh_sh"><code>$ cat modules/examle
+example
+└── lib
+    ├── facter
+    │ └── user_count.rb
+    ├── hiera
+    │ └── backend
+    │     └── mssql_backend.rb
+    └── puppet
+        ├── parser
+        │   └── functions
+        │       └── capitalize.rb
+        ├── provider
+        │   └── user_homedir
+        │       └── default.rb
+        ├── reports
+        │   └── logstash.rb
+        └── type
+            └── user_homedir.rb</code></pre>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>Distribution is triggered as the first part of each Puppet run. This means that after new plugins are installed on the master it should be synced by running its agent.</p>
+
+<p>Modules would not conflate plugins of such varying functionality into a single module. Each module should cover only a single topic.</p>
+
+<p>Available extension points:</p>
+
+<ul>
+<li>Augeas lenses can teach Puppet to manage settings within more file types.</li>
+<li>Facts can expose information about agent nodes.</li>
+<li>Functions can extend functionality of the language.</li>
+<li>Types and providers can allow Puppet to manage more resource types.</li>
+<li>Hiera backends can retrieve data from other data sources.</li>
+<li>Report processors can act on report data or forward them to other services.</li>
+<li>Puppet faces can add custom Puppet subcommands.</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_06_extend" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/06_extend/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Custom Facts</h1>
+
+<p>Expose information about agent nodes.</p>
+
+<pre class="sh_sh"><code>$ tree modules/example
+└── lib
+    ├── facter
+    │ └── role.rb
+
+# role.rb
+Facter.add('load_average') do
+  setcode do
+    Facter::Core::Execution.exec('uptime').split(':').last.chomp end
+  end
+end</code></pre>
+
+<ul>
+<li>The fact is set to the value returned from the setcode block.</li>
+<li>Run any commands or Ruby code.</li>
+<li>Errors and empty strings are intercepted and discarded.</li>
+<li>Reminder: all facts are executed each time the Agent runs.</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_06_extend" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/06_extend/3">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>External Facts</h1>
+
+<p>Structured Data:</p>
+
+<pre class="sh_sh"><code>$ cat /etc/puppetlabs/facter/facts.d/datacenter.json
+{
+  "location": "nuremberg",
+  "cluster": "web"
+}</code></pre>
+
+<p>Plain Text:</p>
+
+<pre class="sh_sh"><code>$ cat /etc/puppetlabs/facter/facts.d/datacenter.txt
+location=nuremberg
+cluster=web</code></pre>
+
+<p>Executable Scripts:</p>
+
+<pre class="sh_sh"><code>$ cat /etc/puppetlabs/facter/facts.d/load_avarage.sh
+#!/bin/bash
+VALUE=$(uptime | awk '{print $(NF-2), $(NF-1), $NF}')
+echo "load_average=${VALUE}"</code></pre>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>Notes:
+Text or structured data facts are often static files are often written during the provisioning process and exist throughout the lifetime of the node. YAML and JSON are supported.
+As of Puppet 3.4 and Facter 2.0.1, external facts became pluginsynced from $module/facts.d.</p>
+
+<p>Windows agents support executable external facts with the following extensions:</p>
+
+<ul>
+<li>binary executables: .com and .exe</li>
+<li>batch scripts: .bat and .com</li>
+<li>PowerShell scripts: .ps1</li>
+</ul>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_06_extend" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/06_extend/4">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Hiera Data Lookup Engine</h1>
+
+<p>Single source of information.</p>
+
+<p></p>
+<center><img src="./file/integrations/../_images/integrations/hiera.png" width="577" height="361" alt="Hiera"></center>
+
+<div class="handouts">
+
+<p>Notes:</p>
+
+<p>Hiera allows you to store configuration data outside of your code. Each data item is stored exactly once and simply referenced wherever it is needed. This means that if you update that single source that it will propagate across your infrastructure as needed.
+As a side benefit, it makes your Puppet code exponentially more readable.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_06_extend" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/06_extend/5">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Three layers of hierachies</h1>
+
+<p>Since Puppet 4.9 hiera is full integrated in Puppet and no longer an own project.</p>
+
+<ul>
+<li>Global
+
+<ul>
+<li>Config file: $confdir/hiera.yaml (hiera_config in puppet.conf)</li>
+<li>Supports hiera.yaml v5 and v3 (deprecated)</li>
+</ul>
+</li>
+<li>Environment
+
+<ul>
+<li>Config file: <environment dir>/hiera.yaml</environment>
+</li>
+<li>Supports hiera.yaml v5 and v4 (deprecated)</li>
+</ul>
+</li>
+<li>Module
+
+<ul>
+<li>Config file: <module>/hiera.yaml</module>
+</li>
+<li>Supports v5 and v4 (deprecated)</li>
+<li>Only used for namespace lookup keys (i.e. ntp::servers)</li>
+</ul>
+</li>
+</ul>
+
+
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_06_extend" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/06_extend/6">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Sample hiera.yaml v5</h1>
+
+<pre class="sh_sh"><code>---
+version: 5
+defaults:
+  datadir: data
+  data_hash: yaml_data
+
+hierarchy:
+  - name: "Per-node data"
+    path: "nodes/%{trusted.certname}.json"
+    data_hash: jason_data
+  - name: "Per-network secret data (encrypted)"
+    lookup_key: eyaml_lookup_key
+    path: "secrets/%{facts.domain}.eyaml"
+    options:
+      pkcs7_private_key: /etc/eyaml/private_key.pkcs7.pem
+      pkcs7_public_key:  /etc/eyaml/public_key.pkcs7.pem
+  - name: "Other YAML hierarchy levels"
+    paths:
+      - "locations/%{facts.domain}.yaml"
+      - "os/%{facts.osfamily}.yaml"
+      - "common.yaml"</code></pre>
+
+
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_06_extend" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="integrations/06_extend/7">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 7.5: Extend Hiera</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Store Secrets in Hiera.</li>
+</ul>
+</li>
+<li>Steps:
+
+<ul>
+<li>Install the Hiera backend.</li>
+<li>Create encrypted datasources.</li>
+<li>Retrieve decrypted values from your new backend.</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_07_reporting" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/07_reporting/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Report Processors</h1>
+
+<ul>
+<li>Ruby code</li>
+<li>Connect to (third party) tools that store reports</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_07_reporting" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="integrations/07_reporting/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Third Party Integration</h1>
+
+<p>Example: Reporting to Logstash.</p>
+
+<ul>
+<li>Use Puppet module to install report processors</li>
+<li>Connects directly to Logstash</li>
+<li>Use Elastic Stack to store reports</li>
+</ul>
+
+<div class="notes">
+
+<p>Elastic stack is already installed on overlord. Can be used by students to view their own reports.</p>
+
+<p>The module seems not to work as expected. You will need workarounds. See the following lab for working code.</p>
+
+</div>
+
+<div class="handouts">
+
+<p>The module seems not to work as expected. You will need workarounds. See the following lab for working code.</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_07_reporting" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="integrations/07_reporting/3">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Reporting to Elastic Stack</h1>
+
+<p>You will need a working Elastic Stack for this.</p>
+
+<ul>
+<li>Logstash (collect, transform and transport reports)</li>
+<li>Elasticsearch (store reports)</li>
+<li>Kibana (view reports, create graphs, etc.)</li>
+</ul>
+
+<div class="handouts">
+
+<p>If you want to learn how to deploy and use Elastic Stack, see: <a href="https://www.netways.de/en/events_trainings/elastickstack/">https://www.netways.de/en/events_trainings/elastickstack/</a></p>
+
+<p>An example Logstash configuration for usage with the Puppet Logstash Reporter</p>
+
+<pre><code>input {
+  tcp {
+    port =&gt; 5999
+    type =&gt; "puppet-logstash-reporter"
+    codec =&gt; "json"
+  }
+}
+output {
+  elasticsearch {
+  }
+}</code></pre>
+
+</div>
+
+<div class="notes">
+
+<p>If you want to learn how to deploy and use Elastic Stack, see: <a href="https://www.netways.de/en/events_trainings/elastickstack/">https://www.netways.de/en/events_trainings/elastickstack/</a></p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="integrations_07_reporting" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="integrations/07_reporting/4">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab 7.6: Add the Logstash Reporter</h1>
+
+<ul>
+<li>Objective:
+
+<ul>
+<li>Send your Puppet reports to Logstash</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="global_Post_01_Feedback" class="slide noprint center" data-transition="none">
+<div class="content noprint center" ref="global/Post/01_Feedback">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>FEEDBACK</h1>
+
+<p>We look forward to your feedback</p>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="global_Post_02_Thanks" class="slide noprint center" data-transition="none">
+<div class="content noprint center" ref="global/Post/02_Thanks">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>THANK YOU</h1>
+
+<p>Thank you for your attention!</p>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="global_Post_03_Contributors" class="slide noprint center" data-transition="none">
+<div class="content noprint center" ref="global/Post/03_Contributors/1">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Contributing</h1>
+
+<p>Contribute to the Puppet training on <a href="https://github.com/NETWAYS/infrastructure4puppet-training">Github</a> to make it even better.</p>
+
+<p>Material is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="global_Post_03_Contributors" class="slide noprint small" data-transition="none">
+<div class="content noprint small" ref="global/Post/03_Contributors/2">
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Contributors</h1>
+
+<pre>
+Lennart Betz
+Thomas Widhalm
+</pre>
+
+<div id="net-footer">
+    <p id="footer-left">Infrastructure for Puppet Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+</div>
+<div id="pauseScreen">
+  PAUSED
+</div>
+
+</body>
+</html>

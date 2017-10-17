@@ -1,0 +1,31 @@
+{
+  "name": "Infrastructure for Puppet",
+  "date": "31.08. - 01.09.2016",
+  "location": "Nuremberg",
+  "author": "Lennart Betz & Thomas Widhalm",
+  "release": "1.0",
+
+  "favicon": "image/global/favicon.ico",
+
+  "protected": ["presenter", "onepage", "print"],
+  "user": "netways",
+  "password": "awesome",
+
+  "templates" : {
+       "default"   : "global/templates/default.tpl"
+  },
+
+  "sections": [
+   {"section":"global/Pre/Title"},
+
+   {"section":"training"},
+   {"section":"architecture"},
+   {"section":"compile-master"},
+   {"section":"environments"},
+   {"section":"scaling"},
+   {"section":"orchestration"},
+   {"section":"integrations"},
+
+   {"section":"global/Post"}
+  ]
+}
