@@ -9,7 +9,7 @@ Targeted audience are experienced Linux administrators in need of a configuratio
 solution for their systems.
 
 In addition to the sources you can find the rendered material on 
-[netways.github.io](https://netways.github.io/NETWAYS/infrastructure4puppet-training)
+[netways.github.io](https://netways.github.io/infrastructure4puppet-training)
 
 * [Presentation](https://netways.github.io/infrastructure4puppet-training)
 * [Handouts](https://github.com/NETWAYS/infrastructure4puppet-training/releases/download/v1.0/infrastructure4puppet-training-handouts.pdf)
