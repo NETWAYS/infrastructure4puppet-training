@@ -9,8 +9,8 @@
 Interact with component services.
 
 * Retrieve infrastructure data from PuppetDB.
-* ??? Foreman ??? Query the Node Classifier for classification information.
-* ??? Foreman ??? Add rules to the Node Classifier during the provisioning process.
+* Query the Foreman Node Classifier for classification information.
+* Add rules to the Foreman Node Classifier during the provisioning process.
 * Sign certificates for newly provisioned nodes.
 * Clear environment caches on compile masters when deploying codebase.
 * ...
